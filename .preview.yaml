@@ -3,6 +3,6 @@ apiVersion: 1.0.0
 previews:
   - name: insurance-frontend                                  
     container:
-      image: us-east1-docker.pkg.dev/core-workshop/workshop-registry/insurance-frontend:bee-ci2
+      image: us-east1-docker.pkg.dev/core-workshop/workshop-registry/pipeline-workshop/insurance-frontend:${{env.commit.sha}}
       ports:
       - value: 80                              
