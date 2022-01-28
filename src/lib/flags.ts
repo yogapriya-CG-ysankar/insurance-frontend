@@ -23,5 +23,5 @@ async function initRollout() {
 }
 
 initRollout().then(function () {
-  console.log("Done loading CloudBees Feature Management");
+  console.log("Done loading CloudBees Feature Management for environment id: " + import.meta.env.VITE_FM_KEY);
 });
