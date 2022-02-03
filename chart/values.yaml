@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: us-east1-docker.pkg.dev/core-workshop/workshop-registry/insurance-frontend
   pullPolicy: IfNotPresent
   tag: latest
 
