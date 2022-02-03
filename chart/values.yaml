@@ -27,7 +27,7 @@ ingress:
   tls:
     - secretName: staging-tls
       hosts:
-        - example.com
+        - bee-ci2.staging.workshop.cb-sa.io
 
 backendUrl: https://example.com
 fmToken: 61f462a5498b12caa9a6f84a
