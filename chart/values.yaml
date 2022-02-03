@@ -19,6 +19,7 @@ ingress:
   annotations:
      kubernetes.io/ingress.class: nginx
      kubernetes.io/tls-acme: "true"
+     cert-manager.io/cluster-issuer: staging-issuer
   hosts:
     - host: bee-ci2.staging.workshop.cb-sa.io
       paths:
