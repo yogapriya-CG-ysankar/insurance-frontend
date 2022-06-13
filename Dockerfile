@@ -1,11 +1,10 @@
 ARG BASE_IMAGE_TAG=1.20.1
 FROM us-east1-docker.pkg.dev/core-workshop/workshop-registry/node:17-alpine as BUILDER
-RUN npm install -g pnpm
 WORKDIR /app
 COPY package.json pnpm-lock.yaml /app/
-RUN pnpm install
+RUN npm install
 COPY . .
-RUN pnpm build
+RUN npm build
 
 FROM us-east1-docker.pkg.dev/core-workshop/workshop-registry/nginx:$BASE_IMAGE_TAG
 COPY variableReplace.sh /docker-entrypoint.d/
