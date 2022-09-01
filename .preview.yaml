@@ -1,0 +1,25 @@
+apiVersion: 1.0.0                                
+previews:
+- name: insurance-frontend
+  helm:
+    chart: ./chart                  
+    valuesFiles:                                 
+    - ./chart/values.yaml
+    values:                                      
+      image:
+        tag: ${{env.commit.shortSha}}
+      ingress:
+        annotations:
+           kubernetes.io/tls-acme: "true"
+           cert-manager.io/cluster-issuer: letsencrypt-prod
+        hosts: 
+          - host: ${{env.hostname}}
+            paths:
+              - path: /
+                pathType: ImplementationSpecific
+        tls:
+          - secretName: ${{env.ingress.tlsSecretName}}
+            hosts:
+              - ${{env.hostname}}
+    config:
+      deployTimeout: "20m"  
