@@ -1,6 +1,6 @@
 apiVersion: 1.0.0                                
 previews:
-- name: insurance-frontend
+- name: default                                   
   helm:
     chart: ./chart                  
     valuesFiles:                                 
