@@ -25,4 +25,6 @@ previews:
       deployTimeout: "20m"  
 - name: generated
   container:
-    image: us-east1-docker.pkg.dev/core-workshop/workshop-registry/insurance-frontend:${{env.commit.shortSha}} 
+    image: us-east1-docker.pkg.dev/core-workshop/workshop-registry/insurance-frontend:${{env.commit.shortSha}}
+    ports:
+    - value: 80
